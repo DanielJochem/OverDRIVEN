@@ -51,7 +51,7 @@ public class CameraController : MonoBehaviour {
 		lookAtVector =  new Vector3(0, lookAtHeight, 0);
 	}
  
-	void LateUpdate () {
+	void LateUpdate() {
 		wantedHeight = target.position.y + height;
 		currentHeight = transform.position.y;
  

@@ -32,89 +32,55 @@ public class PlayerController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
         Movement();
-
-
     }
 
-    void Movement() {
-
-        if (!GameManager.Instance.dead)
-            
-        {
+    void Movement() { 
+        if (!GameManager.Instance.isDead) {
             car.position += transform.forward * moveSpeed * Time.deltaTime;
             //Movement Up and Down
-            if (Input.GetKey(GameManager.Instance.forwardC) && Input.GetKey(GameManager.Instance.backwardC))
-            {
-                if (moveSpeed > 0.05f)
-                {
+            if (Input.GetKey(GameManager.Instance.forwardC) && Input.GetKey(GameManager.Instance.backwardC)) {
+                if (moveSpeed > 0.05f) {
                     moveSpeed -= Time.deltaTime * 3;
-                }
-                else if (moveSpeed < 0.05f)
-                {
+                } else if (moveSpeed < 0.05f) {
                     moveSpeed += Time.deltaTime * 3;
                 }
-                else if (moveSpeed > -0.05f && moveSpeed < 0.05f)
-                {
+                else if (moveSpeed > -0.05f && moveSpeed < 0.05f) {
                     //MASSIVE SKIDDIES
                 }
 
-            }
-            else if (Input.GetKey(GameManager.Instance.forwardC))
-            {
-                if (moveSpeed < maxSpeed)
-                {
-                    if (moveSpeed < 0.0f)
-                    {
+            } else if (Input.GetKey(GameManager.Instance.forwardC)) {
+                if (moveSpeed < maxSpeed) {
+                    if (moveSpeed < 0.0f) {
                         moveSpeed += Time.deltaTime * 3;
-                    }
-                    else {
+                    } else {
                         moveSpeed += Time.deltaTime;
                     }
                 }
-
             }
-            else if (Input.GetKey(GameManager.Instance.backwardC))
-            {
-                if (moveSpeed > -maxSpeed)
-                {
-                    if (moveSpeed > 0.0f)
-                    {
+            else if (Input.GetKey(GameManager.Instance.backwardC)) {
+                if (moveSpeed > -maxSpeed) {
+                    if (moveSpeed > 0.0f) {
                         moveSpeed -= Time.deltaTime * 3;
-                    }
-                    else {
+                    } else {
                         moveSpeed -= Time.deltaTime;
                     }
                 }
 
-            }
-            else if (moveSpeed > 0.0f)
-            {
+            } else if (moveSpeed > 0.0f) {
                 moveSpeed -= Time.deltaTime * 2;
 
-            }
-            else if (moveSpeed < 0.0f)
-            {
+            } else if (moveSpeed < 0.0f) {
                 moveSpeed += Time.deltaTime * 2;
             }
 
-            if (Input.GetKey(GameManager.Instance.leftC))
-            {
+            if (Input.GetKey(GameManager.Instance.leftC)) {
                 car.Rotate(new Vector3(0, -1, 0) * Time.deltaTime * moveSpeed * 15);
-            }
-            else if (Input.GetKey(GameManager.Instance.rightC))
-            {
+            } else if (Input.GetKey(GameManager.Instance.rightC)) {
                 car.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * moveSpeed * 15);
             }
 
             this.gameObject.GetComponent<Rigidbody>().velocity = transform.forward * moveSpeed / 2;
-
-            //TEST
-            /*if(GameManager.Instance.timer > 10.0f && !doneReset) {
-                DeactivateCar();
-                doneReset = true;
-            }*/
         }
     }
 
@@ -155,14 +121,12 @@ public class PlayerController : MonoBehaviour {
         yield return new WaitForSeconds(2);
         DeactivateCar();
         car.position = startingPos;
-        GameManager.Instance.gameRestarted = true;
+        GameManager.Instance.gameRestart = true;
     }
 
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Buildings" && (moveSpeed >= maxSpeed / 2 || moveSpeed <= -maxSpeed / 2))
-        {
-            GameManager.Instance.dead = true;
+    void OnCollisionEnter(Collision other) {
+        if (other.gameObject.tag == "Buildings" && (moveSpeed >= maxSpeed / 2 || moveSpeed <= -maxSpeed / 2)) {
+            GameManager.Instance.isDead = true;
             Instantiate(carExplotion, car.transform.position, car.transform.rotation);
             StartCoroutine(WaitForExplosion());
         }

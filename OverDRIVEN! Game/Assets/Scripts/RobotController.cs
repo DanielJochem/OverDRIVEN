@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class RobotController : MonoBehaviour {
 
     //Get the transform of the robot.
-    public Transform robot;
+    Transform robot;
 
     //Set the speed that will be used in the movement and rotation calculations.
     int speed = 30;
@@ -25,7 +25,7 @@ public class RobotController : MonoBehaviour {
 
         //Setting GameRestarted to false.
 
-        GameManager.Instance.gameRestarted = false;
+        GameManager.Instance.gameRestart = false;
     }
 
     void Update() {

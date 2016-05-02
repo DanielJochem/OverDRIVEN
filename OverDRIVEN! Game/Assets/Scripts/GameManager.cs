@@ -10,7 +10,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
     
     //Game is over, go back to car selection screen.
     /*@*@*@* Add when you crash, set to true *@*@*@*/
-    public bool gameRestarted;
+    public bool gameRestart;
 
     //The hacker timer.
     public float timer;
@@ -19,7 +19,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
     public string carSelected;
 
     //make dead
-    public bool dead;
+    public bool isDead;
 
     //The 4 directions you can move in.
     public string forwardC,
@@ -48,7 +48,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
                 HackerControls();
             }
 
-            if(gameRestarted)
+            if(gameRestart)
             {
                 RestartGame();
             }
@@ -89,8 +89,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
     void RestartGame() {
         ResetControls();
         carSelected = "";
-        dead = false;
+        isDead = false;
         SceneManager.LoadScene(1);
-
     }
 }

@@ -1,30 +1,21 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class MenuController : MonoBehaviour
-{
+public class MenuController : MonoBehaviour {
 
     // Use this for initialization
-    void Start()
-    {
-
+    void Start() {
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-
+    void Update() {
     }
 
-    public void start()
-    {
-      
-        
-
+    public void LoadGarageLevel() {
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+    }
 
-     
-
+    public void LoadGameLevel() {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 }
