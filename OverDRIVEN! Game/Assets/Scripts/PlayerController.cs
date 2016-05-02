@@ -2,7 +2,8 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : MonoBehaviour
+{
 
     Transform car;
     public float moveSpeed = 0.0f;
@@ -28,7 +29,8 @@ public class PlayerController : MonoBehaviour {
     public int turningFIRM = 0;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         car = this.transform;
         startingPos = car.position;
         //I hope Start() runs again once the scene has been loaded for a second time.
@@ -36,17 +38,19 @@ public class PlayerController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
 
         Movement();
 
 
     }
 
-    void Movement() {
+    void Movement()
+    {
 
         if (!GameManager.Instance.dead)
-            
+
         {
             car.position += transform.forward * moveSpeed * Time.deltaTime;
             //Movement Up and Down
@@ -74,7 +78,8 @@ public class PlayerController : MonoBehaviour {
                     {
                         moveSpeed += Time.deltaTime * 3;
                     }
-                    else {
+                    else
+                    {
                         moveSpeed += Time.deltaTime;
                     }
                 }
@@ -88,7 +93,8 @@ public class PlayerController : MonoBehaviour {
                     {
                         moveSpeed -= Time.deltaTime * 3;
                     }
-                    else {
+                    else
+                    {
                         moveSpeed -= Time.deltaTime;
                     }
                 }
@@ -123,8 +129,10 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void ActivateCar() {
-        switch(GameManager.Instance.carSelected) {
+    void ActivateCar()
+    {
+        switch (GameManager.Instance.carSelected)
+        {
             case "Base AI":
                 baseAI.gameObject.SetActive(true);
                 break;
@@ -149,14 +157,17 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void DeactivateCar() {
-        for(var i = 0; i < this.transform.GetChild(0).childCount; i++) {
+    void DeactivateCar()
+    {
+        for (var i = 0; i < this.transform.GetChild(0).childCount; i++)
+        {
             this.transform.GetChild(0).GetChild(i).gameObject.SetActive(false);
         }
         GameManager.Instance.carSelected = "";
     }
 
-    IEnumerator WaitForExplosion() {
+    IEnumerator WaitForExplosion()
+    {
         yield return new WaitForSeconds(2);
         DeactivateCar();
         car.position = startingPos;
@@ -165,11 +176,20 @@ public class PlayerController : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Buildings" && (moveSpeed >= maxSpeed / 2 || moveSpeed <= -maxSpeed / 2))
+        if (other.gameObject.tag == "Buildings" && (moveSpeed >= maxSpeed / 2 || moveSpeed <= -maxSpeed / 2) && armorFIRM <= 0)
         {
             GameManager.Instance.dead = true;
             Instantiate(carExplotion, car.transform.position, car.transform.rotation);
             StartCoroutine(WaitForExplosion());
+        }
+
+        //If the player has armor, take 1 away. 
+        if (other.gameObject.tag == "Buildings" && (moveSpeed >= maxSpeed / 2 || moveSpeed <= -maxSpeed / 2) && armorFIRM > 0)
+        {
+
+            armorFIRM--;
+
+
         }
 
         //ifs for the pickups
