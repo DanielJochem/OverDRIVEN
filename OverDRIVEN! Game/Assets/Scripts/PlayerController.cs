@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
-using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour {
 
     Transform car;
     public float moveSpeed = 0.0f;
@@ -29,8 +27,7 @@ public class PlayerController : MonoBehaviour
     public int turningFIRM = 0;
 
     // Use this for initialization
-    void Start()
-    {
+    void Start() {
         car = this.transform;
         startingPos = car.position;
         //I hope Start() runs again once the scene has been loaded for a second time.
@@ -38,20 +35,12 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
+    void Update() {
         Movement();
-
-
     }
 
-    void Movement()
-    {
-
-        if (!GameManager.Instance.isDead)
-
-        {
+    void Movement() {
+        if (!GameManager.Instance.isDead) {
             car.position += transform.forward * moveSpeed * Time.deltaTime;
             //Movement Up and Down
             if (Input.GetKey(GameManager.Instance.forwardC) && Input.GetKey(GameManager.Instance.backwardC))

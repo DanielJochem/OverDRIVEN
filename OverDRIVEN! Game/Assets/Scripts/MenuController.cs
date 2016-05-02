@@ -1,21 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MenuController : MonoBehaviour {
+public class MenuController : SingletonBehaviour<MenuController> {
 
-    // Use this for initialization
     void Start() {
-    }
-
-    // Update is called once per frame
-    void Update() {
+        Object.DontDestroyOnLoad(this.gameObject);
     }
 
     public void LoadGarageLevel() {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1);
     }
 
     public void LoadGameLevel() {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        SceneManager.LoadScene(2);
     }
 }

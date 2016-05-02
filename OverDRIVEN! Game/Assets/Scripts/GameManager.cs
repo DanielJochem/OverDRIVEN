@@ -91,6 +91,6 @@ public class GameManager : SingletonBehaviour<GameManager> {
         ResetControls();
         carSelected = "";
         isDead = false;
-        SceneManager.LoadScene(1);
+        MenuController.Instance.LoadGarageLevel();
     }
 }

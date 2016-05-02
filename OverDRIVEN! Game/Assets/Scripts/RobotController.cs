@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
 
 public class RobotController : MonoBehaviour {
 
@@ -24,7 +23,6 @@ public class RobotController : MonoBehaviour {
         robot = this.transform;
 
         //Setting GameRestarted to false.
-
         GameManager.Instance.gameRestart = false;
     }
 
@@ -64,7 +62,7 @@ public class RobotController : MonoBehaviour {
                     GameManager.Instance.gameCanBegin = true;
 
                     //Load the Game Scene.
-                    SceneManager.LoadScene(2);
+                    MenuController.Instance.LoadGameLevel();
                 }
             } else {
                 //If you moved your laser before the time was up, reset the countdown time.
@@ -84,6 +82,6 @@ public class RobotController : MonoBehaviour {
     void OnGUI() {
         //Display the countdown when it is counting down
         if(selectionTime < 3.0f && selectionTime > -0.01f)
-        GUI.Label(new Rect(10, 10, 400, 90), "Selecting " + hit.transform.name + " in: " + selectionTime.ToString("F2") + " seconds");
+            GUI.Label(new Rect(Screen.width / 2.8f, 20, 400, 90), "Selecting " + hit.transform.name + " in: " + selectionTime.ToString("F2") + " seconds");
     }
 }
