@@ -207,7 +207,7 @@ public class PlayerController : MonoBehaviour
 
             hackerFIRM++;
             Destroy(other.gameObject);
-
+            GameManager.Instance.timerPERCENT = GameManager.Instance.timerPERCENT + 15;
         }
 
         if (other.gameObject.tag == "Armor_Pickup")

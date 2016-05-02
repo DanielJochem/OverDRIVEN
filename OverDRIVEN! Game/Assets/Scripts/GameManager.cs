@@ -14,6 +14,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
 
     //The hacker timer.
     public float timer;
+    public float timerPERCENT = 30;
 
     //Cars to choose from.
     public string carSelected;
@@ -43,7 +44,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
             timer += Time.deltaTime;
 
             //If the counter is at a 30 second mark,
-            if(timer % 30 <= 0.02f && timer > 1f) {
+            if(timer % timerPERCENT <= 0.02f && timer > 1f) {
                 //Change the controls.
                 HackerControls();
             }
