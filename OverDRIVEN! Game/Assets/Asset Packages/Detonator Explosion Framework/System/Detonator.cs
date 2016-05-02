@@ -376,12 +376,14 @@ public class Detonator : MonoBehaviour {
         //Unity Pro Only
         if (SystemInfo.supportsImageEffects)
         {
-            if (defaultHeatwaveMaterial != null) return defaultHeatwaveMaterial;
+            /*if (defaultHeatwaveMaterial != null) return defaultHeatwaveMaterial;
             defaultHeatwaveMaterial = new Material(Shader.Find("HeatDistort"));
             defaultHeatwaveMaterial.name = "Heatwave-Default";
             Texture2D tex = Resources.Load("Detonator/Textures/Heatwave") as Texture2D;
             defaultHeatwaveMaterial.SetTexture("_BumpMap", tex);
-            return defaultHeatwaveMaterial;
+            return defaultHeatwaveMaterial; */
+
+            return null;
         }
         else
         {
