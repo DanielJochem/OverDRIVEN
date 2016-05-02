@@ -22,6 +22,11 @@ public class PlayerController : MonoBehaviour {
 
     public bool doneReset;
 
+    public int speedFIRM = 0;
+    public int armorFIRM = 0;
+    public int hackerFIRM = 0;
+    public int turningFIRM = 0;
+
     // Use this for initialization
     void Start () {
         car = this.transform;
@@ -166,5 +171,40 @@ public class PlayerController : MonoBehaviour {
             Instantiate(carExplotion, car.transform.position, car.transform.rotation);
             StartCoroutine(WaitForExplosion());
         }
+
+        //ifs for the pickups
+
+        if (other.gameObject.tag == "Wheel_Pickup")
+        {
+
+            turningFIRM++;
+            Destroy(other.gameObject);
+            rotateSpeed = rotateSpeed + 10;
+        }
+
+        if (other.gameObject.tag == "Hacker_Pickup")
+        {
+
+            hackerFIRM++;
+            Destroy(other.gameObject);
+
+        }
+
+        if (other.gameObject.tag == "Armor_Pickup")
+        {
+
+            armorFIRM++;
+            Destroy(other.gameObject);
+
+        }
+
+        if (other.gameObject.tag == "Speed_Pickup")
+        {
+
+            speedFIRM++;
+            Destroy(other.gameObject);
+            maxSpeed = maxSpeed + 1;
+        }
+
     }
 }
