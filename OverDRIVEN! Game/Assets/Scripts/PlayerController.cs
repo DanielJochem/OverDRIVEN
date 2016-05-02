@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     void Movement()
     {
 
-        if (!GameManager.Instance.dead)
+        if (!GameManager.Instance.isDead)
 
         {
             car.position += transform.forward * moveSpeed * Time.deltaTime;
@@ -120,12 +120,6 @@ public class PlayerController : MonoBehaviour
             }
 
             this.gameObject.GetComponent<Rigidbody>().velocity = transform.forward * moveSpeed / 2;
-
-            //TEST
-            /*if(GameManager.Instance.timer > 10.0f && !doneReset) {
-                DeactivateCar();
-                doneReset = true;
-            }*/
         }
     }
 
@@ -171,60 +165,38 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(2);
         DeactivateCar();
         car.position = startingPos;
-        GameManager.Instance.gameRestarted = true;
+        GameManager.Instance.gameRestart = true;
     }
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Buildings" && (moveSpeed >= maxSpeed / 2 || moveSpeed <= -maxSpeed / 2) && armorFIRM <= 0)
-        {
-            GameManager.Instance.dead = true;
-            Instantiate(carExplotion, car.transform.position, car.transform.rotation);
-            StartCoroutine(WaitForExplosion());
-        }
+        if(other.gameObject.tag == "Buildings" && (moveSpeed >= maxSpeed / 2 || moveSpeed <= -maxSpeed / 2) && armorFIRM == 0) {
+            if(armorFIRM == 0) {
+                GameManager.Instance.isDead = true;
+                Instantiate(carExplotion, car.transform.position, car.transform.rotation);
+                StartCoroutine(WaitForExplosion());
+            } else {
+                armorFIRM--;
+            }
 
-        //If the player has armor, take 1 away. 
-        if (other.gameObject.tag == "Buildings" && (moveSpeed >= maxSpeed / 2 || moveSpeed <= -maxSpeed / 2) && armorFIRM > 0)
-        {
+        } else {
+            if(other.gameObject.tag == "Wheel_Pickup") {
+                turningFIRM++;
+                rotateSpeed = rotateSpeed + 10;
 
-            armorFIRM--;
+            } else if(other.gameObject.tag == "Hacker_Pickup") {
+                hackerFIRM++;
+                GameManager.Instance.timerPERCENT = GameManager.Instance.timerPERCENT + 15;
 
+            } else if(other.gameObject.tag == "Armor_Pickup") {
+                armorFIRM++;
 
-        }
+            } else if(other.gameObject.tag == "Speed_Pickup") {
+                speedFIRM++;
+                maxSpeed = maxSpeed + 1;
+            }
 
-        //ifs for the pickups
-
-        if (other.gameObject.tag == "Wheel_Pickup")
-        {
-
-            turningFIRM++;
             Destroy(other.gameObject);
-            rotateSpeed = rotateSpeed + 10;
         }
-
-        if (other.gameObject.tag == "Hacker_Pickup")
-        {
-
-            hackerFIRM++;
-            Destroy(other.gameObject);
-            GameManager.Instance.timerPERCENT = GameManager.Instance.timerPERCENT + 15;
-        }
-
-        if (other.gameObject.tag == "Armor_Pickup")
-        {
-
-            armorFIRM++;
-            Destroy(other.gameObject);
-
-        }
-
-        if (other.gameObject.tag == "Speed_Pickup")
-        {
-
-            speedFIRM++;
-            Destroy(other.gameObject);
-            maxSpeed = maxSpeed + 1;
-        }
-
     }
 }
