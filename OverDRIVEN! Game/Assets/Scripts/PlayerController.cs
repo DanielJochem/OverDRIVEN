@@ -168,7 +168,7 @@ public class PlayerController : MonoBehaviour {
                 armorFIRM--;
             }
 
-        } else {
+        } else if (other.gameObject.tag != "Floor") {
             if(other.gameObject.tag == "Wheel_Pickup") {
                 turningFIRM++;
                 rotateSpeed = rotateSpeed + 10;
