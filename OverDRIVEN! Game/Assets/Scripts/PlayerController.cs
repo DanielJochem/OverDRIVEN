@@ -170,7 +170,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "Buildings" && (moveSpeed >= maxSpeed / 2 || moveSpeed <= -maxSpeed / 2) && armorFIRM == 0) {
+        if(other.gameObject.tag == "Buildings" && (moveSpeed >= maxSpeed / 2 || moveSpeed <= -maxSpeed / 2)) {
             if(armorFIRM == 0) {
                 GameManager.Instance.isDead = true;
                 Instantiate(carExplotion, car.transform.position, car.transform.rotation);
