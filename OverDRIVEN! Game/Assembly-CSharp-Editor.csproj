@@ -215,23 +215,23 @@
  <Reference Include="UnityEditor.TreeEditor">
  <HintPath>F:/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
  </Reference>
- <Reference Include="UnityEditor.Graphs">
- <HintPath>F:/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
- </Reference>
  <Reference Include="ProBuilderCore-Unity5">
- <HintPath>C:/Users/Jake/Documents/Game/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity5.dll</HintPath>
- </Reference>
- <Reference Include="KDTree">
- <HintPath>C:/Users/Jake/Documents/Game/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Classes/ClassesLib/KDTree.dll</HintPath>
- </Reference>
- <Reference Include="Triangle">
- <HintPath>C:/Users/Jake/Documents/Game/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Classes/ClassesLib/Triangle.dll</HintPath>
- </Reference>
- <Reference Include="ProBuilderEditor-Unity5">
- <HintPath>C:/Users/Jake/Documents/Game/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Editor/ProBuilderEditor-Unity5.dll</HintPath>
+ <HintPath>C:/Users/Jake/Documents/OverDrivenGame/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity5.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderMeshOps-Unity5">
- <HintPath>C:/Users/Jake/Documents/Game/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
+ <HintPath>C:/Users/Jake/Documents/OverDrivenGame/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
+ </Reference>
+ <Reference Include="KDTree">
+ <HintPath>C:/Users/Jake/Documents/OverDrivenGame/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Classes/ClassesLib/KDTree.dll</HintPath>
+ </Reference>
+ <Reference Include="Triangle">
+ <HintPath>C:/Users/Jake/Documents/OverDrivenGame/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Classes/ClassesLib/Triangle.dll</HintPath>
+ </Reference>
+ <Reference Include="ProBuilderEditor-Unity5">
+ <HintPath>C:/Users/Jake/Documents/OverDrivenGame/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Editor/ProBuilderEditor-Unity5.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>F:/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

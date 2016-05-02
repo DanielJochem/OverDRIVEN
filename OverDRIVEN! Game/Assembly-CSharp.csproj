@@ -308,16 +308,16 @@
  <HintPath>F:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderCore-Unity5">
- <HintPath>C:/Users/Jake/Documents/Game/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity5.dll</HintPath>
- </Reference>
- <Reference Include="KDTree">
- <HintPath>C:/Users/Jake/Documents/Game/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Classes/ClassesLib/KDTree.dll</HintPath>
- </Reference>
- <Reference Include="Triangle">
- <HintPath>C:/Users/Jake/Documents/Game/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Classes/ClassesLib/Triangle.dll</HintPath>
+ <HintPath>C:/Users/Jake/Documents/OverDrivenGame/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Classes/ProBuilderCore-Unity5.dll</HintPath>
  </Reference>
  <Reference Include="ProBuilderMeshOps-Unity5">
- <HintPath>C:/Users/Jake/Documents/Game/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
+ <HintPath>C:/Users/Jake/Documents/OverDrivenGame/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Classes/ProBuilderMeshOps-Unity5.dll</HintPath>
+ </Reference>
+ <Reference Include="KDTree">
+ <HintPath>C:/Users/Jake/Documents/OverDrivenGame/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Classes/ClassesLib/KDTree.dll</HintPath>
+ </Reference>
+ <Reference Include="Triangle">
+ <HintPath>C:/Users/Jake/Documents/OverDrivenGame/OverDRIVEN! Game/Assets/ProCore/ProBuilder/Classes/ClassesLib/Triangle.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
