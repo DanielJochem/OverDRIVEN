@@ -21,7 +21,6 @@ public class DetonatorHeatwave : DetonatorComponent {
 	private float _normalizedTime;
 	
 	public Material heatwaveMaterial;
-	private Material _material; //tmp material we alter at runtime;
 	
 	override public void Init()
 	{
@@ -82,7 +81,6 @@ public class DetonatorHeatwave : DetonatorComponent {
 				Destroy(_heatwave.GetComponent(typeof(MeshCollider)));
 
                 if (!heatwaveMaterial) heatwaveMaterial = MyDetonator().heatwaveMaterial;
-                _heatwave.GetComponent<Renderer>().material = _material;
                 _heatwave.transform.parent = this.transform;
 
                 _delayedExplosionStarted = false;

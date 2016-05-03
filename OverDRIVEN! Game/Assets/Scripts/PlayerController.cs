@@ -159,16 +159,21 @@ public class PlayerController : MonoBehaviour {
 
     void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "Buildings" && (moveSpeed >= maxSpeed / 2 || moveSpeed <= -maxSpeed / 2)) {
-            if(armorFIRM == 0) {
-                GameManager.Instance.isDead = true;
-                Instantiate(carExplotion, car.transform.position, car.transform.rotation);
-                StartCoroutine(WaitForExplosion());
-            } else {
-                armorFIRM--;
+        if(other.gameObject.tag == "Buildings") {
+            if(moveSpeed >= maxSpeed / 2 || moveSpeed <= -maxSpeed / 2) {
+                if(armorFIRM == 0) {
+                    GameManager.Instance.isDead = true;
+                    Instantiate(carExplotion, car.transform.position, car.transform.rotation);
+                    StartCoroutine(WaitForExplosion());
+                } else {
+                    armorFIRM--;
+                }
             }
 
-        } else if (other.gameObject.tag != "Floor") {
+        } else if(other.gameObject.tag == "OOB") {
+            GameManager.Instance.gameRestart = true;
+
+        } else if (other.gameObject.tag != "Floor" && other.gameObject.tag != null) {
             if(other.gameObject.tag == "Wheel_Pickup") {
                 turningFIRM++;
                 rotateSpeed = rotateSpeed + 10;
