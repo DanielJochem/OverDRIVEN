@@ -40,7 +40,7 @@ public class GameManager : SingletonBehaviour<GameManager> {
     }
 
     void Update() {
-        if(gameCanBegin && SceneManager.GetActiveScene().name == "OverDRIVEN Game Scene") {
+        if(gameCanBegin && SceneManager.GetActiveScene().name == "Game Scene") {
             timer += Time.deltaTime;
 
             //If the counter is at a 30 second mark,

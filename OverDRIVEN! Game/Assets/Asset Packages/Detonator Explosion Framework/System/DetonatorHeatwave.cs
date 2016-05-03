@@ -76,14 +76,12 @@ public class DetonatorHeatwave : DetonatorComponent {
                 _startSize = 0f;
                 _maxSize = size * 10f;
 
-                _material = new Material(Shader.Find("HeatDistort"));
                 _heatwave = GameObject.CreatePrimitive(PrimitiveType.Plane);
 				_heatwave.name = "Heatwave";
 				_heatwave.transform.parent = this.transform;
 				Destroy(_heatwave.GetComponent(typeof(MeshCollider)));
 
                 if (!heatwaveMaterial) heatwaveMaterial = MyDetonator().heatwaveMaterial;
-                _material.CopyPropertiesFromMaterial(heatwaveMaterial);
                 _heatwave.GetComponent<Renderer>().material = _material;
                 _heatwave.transform.parent = this.transform;
 
