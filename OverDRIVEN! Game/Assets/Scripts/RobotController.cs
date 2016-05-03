@@ -72,9 +72,6 @@ public class RobotController : MonoBehaviour {
                 selectionTime = 3.0f;
             }
 
-            //So in the Editor, we can see the Raycast hitting the cars.
-            Debug.DrawLine(robot.position, hit.point, Color.red);
-
         //If the Raycast is hitting nothing,
         } else {
             //Reset the countdown timer.

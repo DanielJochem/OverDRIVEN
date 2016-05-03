@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour {
             supra,
             wrx,
             chevelle,
-            gtr,
+            lambo,
             stingray;
 
     public bool doneReset;
@@ -136,8 +136,8 @@ public class PlayerController : MonoBehaviour {
             case "Chevelle":
                 chevelle.gameObject.SetActive(true);
                 break;
-            case "GTR":
-                gtr.gameObject.SetActive(true);
+            case "Lambo":
+                lambo.gameObject.SetActive(true);
                 break;
             case "Stingray":
                 stingray.gameObject.SetActive(true);
