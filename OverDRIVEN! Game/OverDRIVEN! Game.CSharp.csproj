@@ -123,6 +123,7 @@
     <Compile Include="Assets\Scripts\RobotController.cs" />
     <Compile Include="Assets\Scripts\SingletonBehaviour.cs" />
     <Compile Include="Assets\Scripts\UI.cs" />
+    <Compile Include="Assets\Slider.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Asset Packages\Standard Assets\Car\CarGuidelines.txt" />
