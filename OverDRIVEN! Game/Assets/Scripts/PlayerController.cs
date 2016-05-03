@@ -26,12 +26,17 @@ public class PlayerController : MonoBehaviour {
     public int hackerFIRM = 0;
     public int turningFIRM = 0;
 
+    public AudioClip Pickup;
+    public AudioSource PickupAudio;
+
     // Use this for initialization
     void Start() {
         car = this.transform;
         startingPos = car.position;
         //I hope Start() runs again once the scene has been loaded for a second time.
         ActivateCar();
+        
+
     }
 
     // Update is called once per frame
@@ -189,6 +194,9 @@ public class PlayerController : MonoBehaviour {
                 speedFIRM++;
                 maxSpeed = maxSpeed + 1;
             }
+
+            PickupAudio.Play();
+            
 
             Destroy(other.gameObject);
         }
