@@ -29,6 +29,15 @@ public class PlayerController : MonoBehaviour {
     public AudioClip Pickup;
     public AudioSource PickupAudio;
 
+    public GameObject destroyed;
+    public GameObject chevelleDestroyed;
+    public GameObject supraDestroyed;
+    public GameObject otherDestroyed;
+
+    public CameraController camController;
+
+    //public bool onGround;
+
     // Use this for initialization
     void Start() {
         car = this.transform;
@@ -45,7 +54,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Movement() {
-        if (!GameManager.Instance.isDead) {
+        if (!GameManager.Instance.isDead /*&& onGround*/) {
             car.position += transform.forward * moveSpeed * Time.deltaTime;
             //Movement Up and Down
             if (Input.GetKey(GameManager.Instance.forwardC) && Input.GetKey(GameManager.Instance.backwardC))
@@ -151,24 +160,39 @@ public class PlayerController : MonoBehaviour {
         {
             this.transform.GetChild(0).GetChild(i).gameObject.SetActive(false);
         }
-        GameManager.Instance.carSelected = "";
     }
 
     IEnumerator WaitForExplosion()
     {
         yield return new WaitForSeconds(2);
-        DeactivateCar();
+        GameManager.Instance.carSelected = "";
+        Destroy(destroyed.gameObject);
+        destroyed = null;
         car.position = startingPos;
+        camController.distance = 0.5f;
         GameManager.Instance.gameRestart = true;
     }
 
     void OnCollisionEnter(Collision other)
     {
+           //onGround = true;
+
         if(other.gameObject.tag == "Buildings") {
             if(moveSpeed >= maxSpeed / 2 || moveSpeed <= -maxSpeed / 2) {
                 if(armorFIRM == 0) {
                     GameManager.Instance.isDead = true;
+                    DeactivateCar();
+                    camController.distance = 1.3f;
                     Instantiate(carExplotion, car.transform.position, car.transform.rotation);
+
+                    if(GameManager.Instance.carSelected == "Chevelle") {
+                        destroyed = (GameObject)Instantiate(chevelleDestroyed, new Vector3(car.transform.position.x - 0.15f, 0.05f, car.transform.position.z), car.transform.rotation);
+                    } else if(GameManager.Instance.carSelected == "Supra") {
+                        destroyed = (GameObject)Instantiate(supraDestroyed, new Vector3(car.transform.position.x - 0.21f, 0.038f, car.transform.position.z), car.transform.rotation);
+                    } else {
+                        destroyed = (GameObject)Instantiate(otherDestroyed, new Vector3(car.transform.position.x, 0.4f, car.transform.position.z), car.transform.rotation);
+                    }
+
                     StartCoroutine(WaitForExplosion());
                 } else {
                     armorFIRM--;
@@ -201,4 +225,10 @@ public class PlayerController : MonoBehaviour {
             Destroy(other.gameObject);
         }
     }
+
+    /*
+    void OnCollisionExit(Collision other) {
+        if(other.gameObject.tag == "Floor")
+            onGround = false;
+    } */
 }

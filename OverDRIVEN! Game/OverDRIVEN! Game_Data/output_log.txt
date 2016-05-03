@@ -1,0 +1,93 @@
+Initialize engine version: 5.3.4f1 (fdbb5133b820)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 965M    (ID=0x13d9)
+    Vendor:   NVIDIA
+    VRAM:     1971 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\Daniel's Uni\16T1\GPG210\Project 3 - Exploration + 'SOMETHING'\OverDRIVEN! Repo\OverDRIVEN! Game\OverDRIVEN! Game_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\Daniel's Uni\16T1\GPG210\Project 3 - Exploration + 'SOMETHING'\OverDRIVEN! Repo\OverDRIVEN! Game\OverDRIVEN! Game_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\Daniel's Uni\16T1\GPG210\Project 3 - Exploration + 'SOMETHING'\OverDRIVEN! Repo\OverDRIVEN! Game\OverDRIVEN! Game_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\Daniel's Uni\16T1\GPG210\Project 3 - Exploration + 'SOMETHING'\OverDRIVEN! Repo\OverDRIVEN! Game\OverDRIVEN! Game_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\Daniel's Uni\16T1\GPG210\Project 3 - Exploration + 'SOMETHING'\OverDRIVEN! Repo\OverDRIVEN! Game\OverDRIVEN! Game_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading D:\Daniel's Uni\16T1\GPG210\Project 3 - Exploration + 'SOMETHING'\OverDRIVEN! Repo\OverDRIVEN! Game\OverDRIVEN! Game_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: D:\Daniel's Uni\16T1\GPG210\Project 3 - Exploration + 'SOMETHING'\OverDRIVEN! Repo\OverDRIVEN! Game\OverDRIVEN! Game_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading D:\Daniel's Uni\16T1\GPG210\Project 3 - Exploration + 'SOMETHING'\OverDRIVEN! Repo\OverDRIVEN! Game\OverDRIVEN! Game_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.092 seconds
+Platform assembly: D:\Daniel's Uni\16T1\GPG210\Project 3 - Exploration + 'SOMETHING'\OverDRIVEN! Repo\OverDRIVEN! Game\OverDRIVEN! Game_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: D:\Daniel's Uni\16T1\GPG210\Project 3 - Exploration + 'SOMETHING'\OverDRIVEN! Repo\OverDRIVEN! Game\OverDRIVEN! Game_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 0.582659 ms
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 377c -> priority: 1 
+  Thread -> id: 9340 -> priority: 1 
+Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 6.464920 ms
+
+Unloading 44 unused Assets to reduce memory usage. Loaded Objects now: 439.
+Total: 0.753589 ms (FindLiveObjects: 0.034343 ms CreateObjectMapping: 0.017369 ms MarkObjects: 0.195799 ms  DeleteObjects: 0.505287 ms)
+
+Selected: Supra
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.446863 ms
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 5438.
+Total: 1.052814 ms (FindLiveObjects: 0.276329 ms CreateObjectMapping: 0.076187 ms MarkObjects: 0.673453 ms  DeleteObjects: 0.026053 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.830152 ms
+
+Unloading 220 unused Assets to reduce memory usage. Loaded Objects now: 479.
+Total: 1.806798 ms (FindLiveObjects: 0.042238 ms CreateObjectMapping: 0.027238 ms MarkObjects: 0.208036 ms  DeleteObjects: 1.528495 ms)
+
+Selected: Lambo
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.453179 ms
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 5443.
+Total: 1.026365 ms (FindLiveObjects: 0.229748 ms CreateObjectMapping: 0.076187 ms MarkObjects: 0.698323 ms  DeleteObjects: 0.021711 ms)
+
+Forward: c, Backward: v, Left: h, Right: w
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.530615 ms
+
+Unloading 208 unused Assets to reduce memory usage. Loaded Objects now: 484.
+Total: 1.582182 ms (FindLiveObjects: 0.056450 ms CreateObjectMapping: 0.028027 ms MarkObjects: 0.213957 ms  DeleteObjects: 1.283351 ms)
+
+Selected: Lambo
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.448837 ms
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 5448.
+Total: 0.932808 ms (FindLiveObjects: 0.239222 ms CreateObjectMapping: 0.060397 ms MarkObjects: 0.611871 ms  DeleteObjects: 0.020922 ms)
+
+Forward: n, Backward: r, Left: z, Right: k
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Forward: w, Backward: x, Left: d, Right: l
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 4.693254 ms
+
+Unloading 208 unused Assets to reduce memory usage. Loaded Objects now: 489.
+Total: 1.391515 ms (FindLiveObjects: 0.105794 ms CreateObjectMapping: 0.030001 ms MarkObjects: 0.271197 ms  DeleteObjects: 0.983732 ms)
+
