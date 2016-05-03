@@ -81,15 +81,17 @@ public class RobotController : MonoBehaviour {
 
     void OnGUI() {
         //Display the countdown when it is counting down.
-        if(selectionTime < 3.0f && selectionTime > -0.01f)
+        if(selectionTime < 3.0f && selectionTime > -0.01f) {
 
-        //The Style for the GUI Text.
-        myStyle = new GUIStyle(GUI.skin.GetStyle("label"));
 
-        //Change the font size and colour of the GUI text.
-        myStyle.fontSize = 18;
-        myStyle.normal.textColor = Color.yellow;
+            //The Style for the GUI Text.
+            myStyle = new GUIStyle(GUI.skin.GetStyle("label"));
 
-        GUI.Label(new Rect(Screen.width / 2.5f, 20, 290, 30), "Selecting " + hit.transform.name + " in: " + selectionTime.ToString("F2") + " seconds", myStyle);
+            //Change the font size and colour of the GUI text.
+            myStyle.fontSize = 18;
+            myStyle.normal.textColor = Color.yellow;
+
+            GUI.Label(new Rect(Screen.width / 2.5f, 20, 290, 30), "Selecting " + hit.transform.name + " in: " + selectionTime.ToString("F2") + " seconds", myStyle);
+        }
     }
 }
