@@ -15,6 +15,9 @@ public class RobotController : MonoBehaviour {
     //The laser reference
     public LineRenderer laser;
 
+    //Make a Style for the GUI component.
+    public GUIStyle myStyle;
+
     //How long the laser has been on the car, after 5 seconds, signifying that they want to choose that one.
     float selectionTime = 3.0f;
 
@@ -80,8 +83,16 @@ public class RobotController : MonoBehaviour {
     }
 
     void OnGUI() {
-        //Display the countdown when it is counting down
+        //Display the countdown when it is counting down.
         if(selectionTime < 3.0f && selectionTime > -0.01f)
-            GUI.Label(new Rect(Screen.width / 2.8f, 20, 400, 90), "Selecting " + hit.transform.name + " in: " + selectionTime.ToString("F2") + " seconds");
+
+        //The Style for the GUI Text.
+        myStyle = new GUIStyle(GUI.skin.GetStyle("label"));
+
+        //Change the font size and colour of the GUI text.
+        myStyle.fontSize = 18;
+        myStyle.normal.textColor = Color.yellow;
+
+        GUI.Label(new Rect(Screen.width / 2.5f, 20, 290, 30), "Selecting " + hit.transform.name + " in: " + selectionTime.ToString("F2") + " seconds", myStyle);
     }
 }
