@@ -91,7 +91,7 @@ public class RobotController : MonoBehaviour {
             myStyle.fontSize = 18;
             myStyle.normal.textColor = Color.yellow;
 
-            GUI.Label(new Rect(Screen.width / 2.5f, 20, 290, 30), "Selecting " + hit.transform.name + " in: " + selectionTime.ToString("F2") + " seconds", myStyle);
+            GUI.Label(new Rect(Screen.width / 2.3f, 20, 290, 30), "Selecting " + hit.transform.name + " in: " + selectionTime.ToString("F2") + " seconds", myStyle);
         }
     }
 }
