@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour {
 
     public CameraController camController;
 
+    public float timer = 5.0f;
+
     //public bool onGround;
 
     // Use this for initialization
@@ -51,6 +53,20 @@ public class PlayerController : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         Movement();
+
+        if(rb.velocity < 0.1f && rb.velocity > -0.1f) {
+
+            if(timer > 0.0f) {
+                timer -= Time.deltaTime;
+            } else {
+                DeactivateCar();
+                GameManager.Instance.carSelected = "";
+                car.position = startingPos;
+                GameManager.Instance.gameRestart = true;
+            }
+        } else {
+            timer = 5.0f;
+        }
     }
 
     void Movement() {
