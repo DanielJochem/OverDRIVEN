@@ -5,11 +5,9 @@ using System.Collections;
 public class GameManager : SingletonBehaviour<GameManager> {
 
     //Car is selected, game can now begin
-    /*@*@*@* Add when you crash, set to false *@*@*@*/
     public bool gameCanBegin;
     
     //Game is over, go back to car selection screen.
-    /*@*@*@* Add when you crash, set to true *@*@*@*/
     public bool gameRestart;
 
     //The hacker timer.
