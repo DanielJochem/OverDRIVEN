@@ -35,11 +35,13 @@ public class PlayerController : MonoBehaviour {
     public GameObject otherDestroyed;
 
     public CameraController camController;
+    public Rigidbody rb;
 
     //public bool onGround;
 
     // Use this for initialization
     void Start() {
+        rb = GetComponent<Rigidbody>();
         car = this.transform;
         startingPos = car.position;
         //I hope Start() runs again once the scene has been loaded for a second time.
@@ -55,17 +57,17 @@ public class PlayerController : MonoBehaviour {
 
     void Movement() {
         if (!GameManager.Instance.isDead /*&& onGround*/) {
-            car.position += transform.forward * moveSpeed * Time.deltaTime;
+            rb.position += transform.forward * moveSpeed * Time.deltaTime;
             //Movement Up and Down
             if (Input.GetKey(GameManager.Instance.forwardC) && Input.GetKey(GameManager.Instance.backwardC))
             {
                 if (moveSpeed > 0.05f)
                 {
-                    moveSpeed -= Time.deltaTime * 3;
+                    moveSpeed -= Time.deltaTime * 6;
                 }
                 else if (moveSpeed < 0.05f)
                 {
-                    moveSpeed += Time.deltaTime * 3;
+                    moveSpeed += Time.deltaTime * 6;
                 }
                 else if (moveSpeed > -0.05f && moveSpeed < 0.05f)
                 {
@@ -79,11 +81,11 @@ public class PlayerController : MonoBehaviour {
                 {
                     if (moveSpeed < 0.0f)
                     {
-                        moveSpeed += Time.deltaTime * 3;
+                        moveSpeed += Time.deltaTime * 6;
                     }
                     else
                     {
-                        moveSpeed += Time.deltaTime;
+                        moveSpeed += Time.deltaTime * 2;
                     }
                 }
 
@@ -94,35 +96,33 @@ public class PlayerController : MonoBehaviour {
                 {
                     if (moveSpeed > 0.0f)
                     {
-                        moveSpeed -= Time.deltaTime * 3;
+                        moveSpeed -= Time.deltaTime * 6;
                     }
                     else
                     {
-                        moveSpeed -= Time.deltaTime;
+                        moveSpeed -= Time.deltaTime * 2;
                     }
                 }
 
             }
             else if (moveSpeed > 0.0f)
             {
-                moveSpeed -= Time.deltaTime * 2;
+                moveSpeed -= Time.deltaTime * 4;
 
             }
             else if (moveSpeed < 0.0f)
             {
-                moveSpeed += Time.deltaTime * 2;
+                moveSpeed += Time.deltaTime * 4;
             }
 
             if (Input.GetKey(GameManager.Instance.leftC))
             {
-                car.Rotate(new Vector3(0, -1, 0) * Time.deltaTime * moveSpeed * 15);
+                car.Rotate(new Vector3(0, -1, 0) * Time.deltaTime * (moveSpeed * 8));
             }
             else if (Input.GetKey(GameManager.Instance.rightC))
             {
-                car.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * moveSpeed * 15);
+                car.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * (moveSpeed * 8));
             }
-
-            this.gameObject.GetComponent<Rigidbody>().velocity = transform.forward * moveSpeed / 2;
         }
     }
 
