@@ -5,26 +5,26 @@ public class PlayerController : MonoBehaviour {
 
     Transform car;
     public float moveSpeed = 0.0f;
-    public float maxSpeed = 6.66f;
+    public float maxSpeed = 8f;
     public float rotateSpeed = 100.0f;
 
     Vector3 startingPos;
     public GameObject carExplotion;
 
     public GameObject baseAI,
-            armoured,
-            supra,
-            wrx,
-            chevelle,
-            lambo,
-            stingray;
+                      armoured,
+                      supra,
+                      wrx,
+                      chevelle,
+                      lambo,
+                      stingray;
 
     public bool doneReset;
 
-    public int speedFIRM = 0;
-    public int armorFIRM = 0;
-    public int hackerFIRM = 0;
-    public int turningFIRM = 0;
+    public int speedFIRM,
+               armorFIRM,
+               hackerFIRM,
+               turningFIRM = 0;
 
     public AudioClip Pickup;
     public AudioSource PickupAudio;
@@ -37,29 +37,23 @@ public class PlayerController : MonoBehaviour {
     public CameraController camController;
     public Rigidbody rb;
 
-    public float timer = 5.0f;
+    public float stillTimer = 10.0f;
 
-    //public bool onGround;
 
-    // Use this for initialization
     void Start() {
         rb = GetComponent<Rigidbody>();
         car = this.transform;
         startingPos = car.position;
-        //I hope Start() runs again once the scene has been loaded for a second time.
         ActivateCar();
-        
-
     }
+    
 
-    // Update is called once per frame
     void Update() {
         Movement();
 
         if(moveSpeed > -1 && moveSpeed < 1) {
-
-            if(timer > 0.0f) {
-                timer -= Time.deltaTime;
+            if(stillTimer > 0.0f) {
+                stillTimer -= Time.deltaTime;
             } else {
                 DeactivateCar();
                 GameManager.Instance.carSelected = "";
@@ -67,85 +61,59 @@ public class PlayerController : MonoBehaviour {
                 GameManager.Instance.gameRestart = true;
             }
         } else {
-            timer = 5.0f;
+            stillTimer = 5.0f;
         }
     }
 
+
     void Movement() {
-        if (!GameManager.Instance.isDead /*&& onGround*/) {
+        if (!GameManager.Instance.isDead) {
             rb.position += transform.forward * moveSpeed * Time.deltaTime;
             //Movement Up and Down
-            if (Input.GetKey(GameManager.Instance.forwardC) && Input.GetKey(GameManager.Instance.backwardC))
-            {
-                if (moveSpeed > 0.05f)
-                {
+            if (Input.GetKey(GameManager.Instance.forwardC) && Input.GetKey(GameManager.Instance.backwardC)) {
+                if (moveSpeed > 0.05f) {
                     moveSpeed -= Time.deltaTime * 6;
-                }
-                else if (moveSpeed < 0.05f)
-                {
+                } else if (moveSpeed < 0.05f) {
                     moveSpeed += Time.deltaTime * 6;
-                }
-                else if (moveSpeed > -0.05f && moveSpeed < 0.05f)
-                {
+                } else if (moveSpeed > -0.05f && moveSpeed < 0.05f) {
                     //MASSIVE SKIDDIES
                 }
 
-            }
-            else if (Input.GetKey(GameManager.Instance.forwardC))
-            {
-                if (moveSpeed < maxSpeed)
-                {
-                    if (moveSpeed < 0.0f)
-                    {
+            } else if (Input.GetKey(GameManager.Instance.forwardC)) {
+                if (moveSpeed < maxSpeed) {
+                    if (moveSpeed < 0.0f) {
                         moveSpeed += Time.deltaTime * 6;
-                    }
-                    else
-                    {
+                    } else {
                         moveSpeed += Time.deltaTime * 2;
                     }
                 }
 
-            }
-            else if (Input.GetKey(GameManager.Instance.backwardC))
-            {
-                if (moveSpeed > -maxSpeed)
-                {
-                    if (moveSpeed > 0.0f)
-                    {
+            } else if (Input.GetKey(GameManager.Instance.backwardC)) {
+                if (moveSpeed > -maxSpeed) {
+                    if (moveSpeed > 0.0f) {
                         moveSpeed -= Time.deltaTime * 6;
-                    }
-                    else
-                    {
+                    } else {
                         moveSpeed -= Time.deltaTime * 2;
                     }
                 }
 
-            }
-            else if (moveSpeed > 0.0f)
-            {
+            } else if (moveSpeed > 0.0f) {
                 moveSpeed -= Time.deltaTime * 4;
 
-            }
-            else if (moveSpeed < 0.0f)
-            {
+            } else if (moveSpeed < 0.0f) {
                 moveSpeed += Time.deltaTime * 4;
             }
 
-            if (Input.GetKey(GameManager.Instance.leftC))
-            {
-                car.Rotate(new Vector3(0, -1, 0) * Time.deltaTime * (moveSpeed * 12));
-            }
-            else if (Input.GetKey(GameManager.Instance.rightC))
-            {
-                car.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * (moveSpeed * 12));
+            if (Input.GetKey(GameManager.Instance.leftC)) {
+                car.Rotate(new Vector3(0, -1, 0) * Time.deltaTime * (moveSpeed * 9));
+            } else if (Input.GetKey(GameManager.Instance.rightC)) {
+                car.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * (moveSpeed * 9));
             }
         }
     }
 
-    void ActivateCar()
-    {
-        switch (GameManager.Instance.carSelected)
-        {
+    void ActivateCar() {
+        switch (GameManager.Instance.carSelected) {
             case "Base AI":
                 baseAI.gameObject.SetActive(true);
                 break;
@@ -170,16 +138,12 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    void DeactivateCar()
-    {
+    void DeactivateCar() {
         for (var i = 0; i < this.transform.GetChild(0).childCount; i++)
-        {
             this.transform.GetChild(0).GetChild(i).gameObject.SetActive(false);
-        }
     }
 
-    IEnumerator WaitForExplosion()
-    {
+    IEnumerator WaitForExplosion() {
         yield return new WaitForSeconds(2);
         GameManager.Instance.carSelected = "";
         Destroy(destroyed.gameObject);
@@ -189,10 +153,7 @@ public class PlayerController : MonoBehaviour {
         GameManager.Instance.gameRestart = true;
     }
 
-    void OnCollisionEnter(Collision other)
-    {
-           //onGround = true;
-
+    void OnCollisionEnter(Collision other) {
         if(other.gameObject.tag == "Buildings") {
             if(moveSpeed >= maxSpeed / 2 || moveSpeed <= -maxSpeed / 2) {
                 if(armorFIRM == 0) {
@@ -236,15 +197,7 @@ public class PlayerController : MonoBehaviour {
             }
 
             PickupAudio.Play();
-            
-
             Destroy(other.gameObject);
         }
     }
-
-    /*
-    void OnCollisionExit(Collision other) {
-        if(other.gameObject.tag == "Floor")
-            onGround = false;
-    } */
 }
