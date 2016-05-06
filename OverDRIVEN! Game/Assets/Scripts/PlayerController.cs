@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour {
     void Update() {
         Movement();
 
-        if(rb.velocity < 0.1f && rb.velocity > -0.1f) {
+        if(moveSpeed > -1 && moveSpeed < 1) {
 
             if(timer > 0.0f) {
                 timer -= Time.deltaTime;
@@ -133,11 +133,11 @@ public class PlayerController : MonoBehaviour {
 
             if (Input.GetKey(GameManager.Instance.leftC))
             {
-                car.Rotate(new Vector3(0, -1, 0) * Time.deltaTime * (moveSpeed * 8));
+                car.Rotate(new Vector3(0, -1, 0) * Time.deltaTime * (moveSpeed * 12));
             }
             else if (Input.GetKey(GameManager.Instance.rightC))
             {
-                car.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * (moveSpeed * 8));
+                car.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * (moveSpeed * 12));
             }
         }
     }

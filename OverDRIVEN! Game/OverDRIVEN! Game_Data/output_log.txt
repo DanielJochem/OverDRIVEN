@@ -14,112 +14,42 @@ Platform assembly: D:\Daniel's Uni\16T1\GPG210\Project 3 - Exploration + 'SOMETH
 Loading D:\Daniel's Uni\16T1\GPG210\Project 3 - Exploration + 'SOMETHING'\OverDRIVEN! Repo\OverDRIVEN! Game\OverDRIVEN! Game_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: D:\Daniel's Uni\16T1\GPG210\Project 3 - Exploration + 'SOMETHING'\OverDRIVEN! Repo\OverDRIVEN! Game\OverDRIVEN! Game_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading D:\Daniel's Uni\16T1\GPG210\Project 3 - Exploration + 'SOMETHING'\OverDRIVEN! Repo\OverDRIVEN! Game\OverDRIVEN! Game_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.148 seconds
+- Completed reload, in  0.079 seconds
 Platform assembly: D:\Daniel's Uni\16T1\GPG210\Project 3 - Exploration + 'SOMETHING'\OverDRIVEN! Repo\OverDRIVEN! Game\OverDRIVEN! Game_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Daniel's Uni\16T1\GPG210\Project 3 - Exploration + 'SOMETHING'\OverDRIVEN! Repo\OverDRIVEN! Game\OverDRIVEN! Game_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.658848 ms
+UnloadTime: 0.516736 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 2030 -> priority: 1 
-  Thread -> id: 2034 -> priority: 1 
+  Thread -> id: 4b2c -> priority: 1 
+  Thread -> id: 4980 -> priority: 1 
 Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 6.270312 ms
+UnloadTime: 6.267944 ms
 
-Unloading 44 unused Assets to reduce memory usage. Loaded Objects now: 452.
-Total: 0.691613 ms (FindLiveObjects: 0.039080 ms CreateObjectMapping: 0.014211 ms MarkObjects: 0.225405 ms  DeleteObjects: 0.412125 ms)
-
-Selected: Armoured
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.430284 ms
-
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 5438.
-Total: 0.758722 ms (FindLiveObjects: 0.150796 ms CreateObjectMapping: 0.060002 ms MarkObjects: 0.526999 ms  DeleteObjects: 0.019737 ms)
-
-Forward: c, Backward: y, Left: q, Right: m
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Forward: d, Backward: b, Left: c, Right: a
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.294474 ms
-
-Unloading 220 unused Assets to reduce memory usage. Loaded Objects now: 492.
-Total: 1.057552 ms (FindLiveObjects: 0.042633 ms CreateObjectMapping: 0.022501 ms MarkObjects: 0.216326 ms  DeleteObjects: 0.775301 ms)
+Unloading 44 unused Assets to reduce memory usage. Loaded Objects now: 450.
+Total: 0.802934 ms (FindLiveObjects: 0.035528 ms CreateObjectMapping: 0.019343 ms MarkObjects: 0.211194 ms  DeleteObjects: 0.536079 ms)
 
 Selected: Lambo
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
 Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.555817 ms
+UnloadTime: 0.628057 ms
 
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 5443.
-Total: 1.543103 ms (FindLiveObjects: 0.374623 ms CreateObjectMapping: 0.098294 ms MarkObjects: 1.042157 ms  DeleteObjects: 0.027238 ms)
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 5475.
+Total: 0.926098 ms (FindLiveObjects: 0.232116 ms CreateObjectMapping: 0.060002 ms MarkObjects: 0.603582 ms  DeleteObjects: 0.029606 ms)
 
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.153941 ms
-
-Unloading 208 unused Assets to reduce memory usage. Loaded Objects now: 497.
-Total: 1.377700 ms (FindLiveObjects: 0.045397 ms CreateObjectMapping: 0.022895 ms MarkObjects: 0.228564 ms  DeleteObjects: 1.080843 ms)
-
-Selected: Supra
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerController+<WaitForExplosion>c__Iterator4.MoveNext () [0x00000] in <filename unknown>:0 
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
+(Filename:  Line: -1)
 
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.506077 ms
-
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 5448.
-Total: 1.089922 ms (FindLiveObjects: 0.266065 ms CreateObjectMapping: 0.064345 ms MarkObjects: 0.731878 ms  DeleteObjects: 0.026843 ms)
-
-Forward: w, Backward: g, Left: b, Right: l
+NullReferenceException: Object reference not set to an instance of an object
+  at PlayerController+<WaitForExplosion>c__Iterator4.MoveNext () [0x00000] in <filename unknown>:0 
  
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Forward: u, Backward: j, Left: e, Right: t
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 4.438642 ms
-
-Unloading 184 unused Assets to reduce memory usage. Loaded Objects now: 501.
-Total: 1.803247 ms (FindLiveObjects: 0.054081 ms CreateObjectMapping: 0.025264 ms MarkObjects: 0.300409 ms  DeleteObjects: 1.421913 ms)
-
-Selected: Supra
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.434232 ms
-
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 5452.
-Total: 0.827409 ms (FindLiveObjects: 0.189483 ms CreateObjectMapping: 0.057634 ms MarkObjects: 0.559764 ms  DeleteObjects: 0.020132 ms)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.629622 ms
-
-Unloading 232 unused Assets to reduce memory usage. Loaded Objects now: 505.
-Total: 1.620475 ms (FindLiveObjects: 0.114874 ms CreateObjectMapping: 0.023685 ms MarkObjects: 0.256591 ms  DeleteObjects: 1.224929 ms)
-
-Selected: Chevelle
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.483576 ms
-
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 5456.
-Total: 1.080053 ms (FindLiveObjects: 0.311857 ms CreateObjectMapping: 0.062371 ms MarkObjects: 0.682928 ms  DeleteObjects: 0.022501 ms)
+(Filename:  Line: -1)
 
 NullReferenceException: Object reference not set to an instance of an object
   at PlayerController+<WaitForExplosion>c__Iterator4.MoveNext () [0x00000] in <filename unknown>:0 
@@ -127,32 +57,8 @@ NullReferenceException: Object reference not set to an instance of an object
 (Filename:  Line: -1)
 
 Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.474088 ms
+UnloadTime: 17.226780 ms
 
-Unloading 232 unused Assets to reduce memory usage. Loaded Objects now: 509.
-Total: 1.299143 ms (FindLiveObjects: 0.071845 ms CreateObjectMapping: 0.023290 ms MarkObjects: 0.258960 ms  DeleteObjects: 0.944652 ms)
-
-Selected: Supra
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.520683 ms
-
-Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 5460.
-Total: 1.228877 ms (FindLiveObjects: 0.257776 ms CreateObjectMapping: 0.072635 ms MarkObjects: 0.870438 ms  DeleteObjects: 0.027238 ms)
-
-Forward: q, Backward: f, Left: n, Right: u
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Forward: z, Backward: q, Left: c, Right: j
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 5.013013 ms
-
-Unloading 184 unused Assets to reduce memory usage. Loaded Objects now: 514.
-Total: 1.202428 ms (FindLiveObjects: 0.041449 ms CreateObjectMapping: 0.022895 ms MarkObjects: 0.281461 ms  DeleteObjects: 0.856226 ms)
+Unloading 308 unused Assets to reduce memory usage. Loaded Objects now: 492.
+Total: 1.892857 ms (FindLiveObjects: 0.049344 ms CreateObjectMapping: 0.044607 ms MarkObjects: 0.270013 ms  DeleteObjects: 1.528102 ms)
 
